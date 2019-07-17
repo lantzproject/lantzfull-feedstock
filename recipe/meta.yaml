@@ -1,0 +1,50 @@
+{% set version = '0.5.2' %}
+{% set deps=[
+  'https://files.pythonhosted.org/packages/f3/b8/30eacbfefe273628e6039ebf54f57b9f47630391493f9d34650752df9e54/PySignal-1.1.1.tar.gz',
+  'https://github.com/pyvisa/pyvisa/archive/1.9.1.zip',
+  'https://github.com/pyvisa/pyvisa-py/archive/0.3.1.zip',
+  'https://github.com/hgrecco/pint/archive/0.9.zip',
+  'https://github.com/hgrecco/pimpmyclass/archive/0.4.3.zip',
+  'https://github.com/hgrecco/serialize/archive/0.1.zip',
+  'https://github.com/hgrecco/stringparser/archive/0.5.zip',
+  'https://github.com/lantzproject/cutelog/archive/patched_stable.zip',
+  ]
+%}
+
+package:
+  name: lantzfull
+  version: {{ version }}
+
+build:
+  number: 1
+  script:
+    {% for dep in deps %}
+    - '{{ PYTHON }} -m pip install {{ dep }}'
+    {% endfor %}
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz-core/archive/0.5.3.zip'
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz-drivers/archive/0.5.2.zip'
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz-qt/archive/0.5.3.zip'
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz-sims/archive/0.5.2.zip'
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz-ino/archive/0.5.2.zip'
+    - '{{ PYTHON }} -m pip install https://github.com/lantzproject/lantz/archive/0.5.2.zip'
+
+requirements:
+  host:
+    - python
+    - pip
+    - pyqt >=5.6
+  run:
+    - arduino-cli
+    - pyqt >=5.6
+    - python >=3.6
+    - pyyaml
+    - qtpy
+
+about:
+  home: https://github.com/lantzproject/lantz
+  license: BSD
+  summary: 'Instrumentation framework'
+  description: |
+    Lantz is an automation and instrumentation toolkit with a clean, well-designed and consistent interface.
+    It provides a core of commonly used functionalities for building applications that communicate with
+    scientific instruments allowing rapid application prototyping, development and testing.
