@@ -1,2 +1,4 @@
+channel_sources:
+  - conda-forge,hgrecco,defaults
 channel_targets:
   - hgrecco main
