@@ -17,6 +17,7 @@ package:
 
 build:
   number: 1
+  skip: True  # [py2k]
   script:
     {% for dep in deps %}
     - '{{ PYTHON }} -m pip install {{ dep }}'
@@ -30,7 +31,6 @@ build:
 
 requirements:
   host:
-    - python
     - pip
     - pyqt >=5.6
   run:
