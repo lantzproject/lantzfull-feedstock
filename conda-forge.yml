@@ -3,8 +3,8 @@ github:
 channels:
   sources:
     - conda-forge
-    - defaults
     - hgrecco
+    - defaults
   targets:
   - [hgrecco, main]
 provider:
