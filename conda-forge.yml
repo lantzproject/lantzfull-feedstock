@@ -1,1 +1,12 @@
-[]
+github:
+  user_or_org: lantzproject
+channels:
+  targets:
+  - [hgrecco, main]
+provider:
+  linux: travis
+  osx: travis
+  win: appveyor
+  linux_ppc64le: None
+  linux_aarch64: None
+min_py_ver: "36"
