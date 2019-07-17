@@ -1,6 +1,10 @@
 github:
   user_or_org: lantzproject
 channels:
+  sources:
+    - conda-forge
+    - defaults
+    - hgrecco
   targets:
   - [hgrecco, main]
 provider:
@@ -9,4 +13,10 @@ provider:
   win: appveyor
   linux_ppc64le: None
   linux_aarch64: None
-min_py_ver: "36"
+min_py_ver: '36'
+travis:
+  secure:
+    BINSTAR_TOKEN: FtmYM5uTXaYVDJdAKFaKWVbiDLU7GdrnnpOZT9oe5vzbXuFTXprXDBHecSaEg/DNwNsWTd14wcx9TxuWavyVVVhHQeboZWeZs55ZvHbui60TiwgX8q7axZMjAdMNOSAv6a7h25g4Qx2xOGmc3MH2NxvXq5XOcQ75VqkuXCLC0WADtomX4pVTlGLGueyaMSQ/7o3EVWRuM7NNs0mnHi0adWOVb7lt9IMxrwEWskDbJ1QytwzrAlvBrUJVpiDUyWSpIg/33jnzxXGoWeUWefM1cTB5IJOTEAgIYaMqFcTjcP/buN2677pDSUTf2ua0XNpBhHvwdnDs6mHFZEz5iRD5OXA4LJFEI6y2xEutUopOAptJh+HQV+A48TLgBLpO4NYi+qFLkGv56CB++JHyl7pz+UbRiQBl1Acaa0DAfI9Shg48PL9w6l0/Dh80y54kRVntZ/gotUxRMOPp6gbP+Y2eRou6dCkdz1XCNYjTWxWBInCeZ6Jy2uDP2N2JAkaGIZKcHDzajdW/WCbALf4i4Netf9tWlsXn965+UJSxgKDqhOmH89koKFwGa7X1yPBmhIlxJzs5lnpqjVF1+GeedJfqC01LmsKdi3trmwCHn4c20TXBDZFOmu8VYtQbEFLAbggzP8+x4pMncaIcIUQyFYEoxiTaJLrPS99UJgadx24nK3w=
+appveyor:
+  secure:
+    BINSTAR_TOKEN: qnTwQiGJBWgaW8Tb+rS3SXRTxJPbZJrEtADGdVzCqFn9SEcoewAV3jA/KOhhunFy
