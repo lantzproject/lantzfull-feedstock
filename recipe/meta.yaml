@@ -17,7 +17,7 @@ package:
 
 build:
   number: 1
-  skip: True  # [py2k]
+  skip: True  # [py<36]
   script:
     {% for dep in deps %}
     - '{{ PYTHON }} -m pip install {{ dep }}'
@@ -31,13 +31,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - pyqt >=5.6
   run:
     - arduino-cli
     - pyqt >=5.6
-    - python >=3.6
+    - python
     - pyyaml
     - qtpy
 
