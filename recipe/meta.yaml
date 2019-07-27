@@ -43,7 +43,7 @@ requirements:
 
 test:
   commands:
-    - lantz
+    - lantz -h
 
 about:
   home: https://github.com/lantzproject/lantz
