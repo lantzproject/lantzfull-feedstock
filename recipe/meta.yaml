@@ -41,6 +41,10 @@ requirements:
     - pyyaml
     - qtpy
 
+test:
+  commands:
+    - lantz
+
 about:
   home: https://github.com/lantzproject/lantz
   license: BSD
